@@ -1,0 +1,77 @@
+Start
+Input areaCode
+Input phoneNumber
+Input numMessages
+
+Set baseRate = 5.00
+Set extraCharge = 0
+
+If numMessages > 100 AND numMessages <= 300
+    extraCharge = (numMessages - 100) * 0.03
+Else If numMessages > 300
+    extraCharge = (200 * 0.03) + ((numMessages - 300) * 0.02)
+
+Set totalBeforeTax = baseRate + extraCharge
+Set totalAfterTax = totalBeforeTax * 1.14
+
+Display areaCode, phoneNumber, numMessages
+Display totalBeforeTax
+Display totalAfterTax
+End
+
+Start
+Repeat
+    Input areaCode
+    If areaCode == "999" then Exit Loop
+
+    Input phoneNumber
+    Input numMessages
+
+    Calculate charges as in Program 1
+    Display all customer data and bill
+Until areaCode == "999"
+End
+
+Start
+Repeat
+    Input areaCode
+    If areaCode == "999" then Exit Loop
+
+    Input phoneNumber
+    Input numMessages
+
+    If numMessages > 100
+        Calculate charges
+        Display customer data and bill
+Until areaCode == "999"
+End
+
+Start
+Repeat
+    Input areaCode
+    If areaCode == "999" then Exit Loop
+
+    Input phoneNumber
+    Input numMessages
+
+    Calculate charges
+    If totalAfterTax > 10.00
+        Display customer data and bill
+Until areaCode == "999"
+End
+
+Start
+Input targetAreaCode
+
+Repeat
+    Input areaCode
+    If areaCode == "999" then Exit Loop
+
+    Input phoneNumber
+    Input numMessages
+
+    If areaCode == targetAreaCode
+        Calculate charges
+        Display customer data and bill
+Until areaCode == "999"
+End
